@@ -1,0 +1,39 @@
+package string;
+
+import java.util.Scanner;
+
+public class plaayingwithstring {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String str=sc.next();
+        System.out.println(goodstring(str));
+    }
+    public static int goodstring(String str)
+    {
+        int count=0;
+        int ans=0;
+        for(int i=0;i<str.length();i++)
+        {
+            if(isvowel(str.charAt(i))==true)
+            {
+                count++;
+            }
+            else
+            {
+                ans =Math.max(ans,count);
+                count=0;
+            }
+        }
+        ans=Math.max(ans,count);
+        return ans;
+    }
+    public static boolean isvowel(char ch)
+    {
+        if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u')
+        {
+            return true;
+        }
+        return false;
+
+    }
+}
